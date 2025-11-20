@@ -14,4 +14,4 @@
    ```sh
    sudo cp ~/5G-I2NSF/index.nginx-debian.html /var/www/html/index.nginx-debian.html
    ```
-4. 
+4. Access Nginx from Firefox based on the IP of the VM.
