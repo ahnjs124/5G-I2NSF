@@ -14,6 +14,7 @@ https://free5gc.org/guide/3-install-free5gc/#a-prerequisites
 
 - **Golang Installation**
 ```sh
+cd
 wget https://dl.google.com/go/go1.24.5.linux-amd64.tar.gz
 sudo tar -C /usr/local -zxvf go1.24.5.linux-amd64.tar.gz
 mkdir -p ~/go/{bin,pkg,src}
