@@ -1,10 +1,14 @@
 # 5G-I2NSF
 
+### Getting Started
+
+### Prerequisites
+Ubuntu 20.04 LTS
+
 ### Installation
 1. Nginx and requirements installation
    ```sh
    sudo apt install nginx
-   
    ```
 2. git clone branch 'WebServer'
    ```sh
