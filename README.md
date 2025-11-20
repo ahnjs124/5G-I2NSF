@@ -31,9 +31,14 @@ sudo apt -y update
 sudo apt -y install wget git
 ```
 
+- **Clone the 5GCore branch**
+```sh
+git clone --branch WebServer https://github.com/ahnjs124/5G-I2NSF.git
+```
 
 - **Make NFs**
 ```sh
+cd ~/free5gc
 make nrf
 make udr
 make udm
@@ -45,13 +50,7 @@ make amf
 make smf
 ```
 
-
-
-- Clone the 5GCore branch
-```sh
-git clone --branch WebServer https://github.com/ahnjs124/5G-I2NSF.git
-```
-- Run each 5G Network Functions
+- **Run each 5G Network Functions**
 ```sh
 cd ~/free5gc
 ./bin/nrf ./config/nrf.yaml
