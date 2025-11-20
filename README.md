@@ -26,11 +26,22 @@ echo 'export GO111MODULE=auto' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-- **Control-plane Supporting Packages**
+- **User-plane Supporting Packages**
 ```sh
 sudo apt -y update
-sudo apt -y install wget git
+sudo apt -y install git gcc g++ cmake autoconf libtool pkg-config libmnl-dev libyaml-dev
 ```
+
+- **Linux Host Network Settings**   
+(<dn_interface>: current Network Interface name)
+```sh
+sudo sysctl -w net.ipv4.ip_forward=1
+sudo iptables -t nat -A POSTROUTING -o <dn_interface> -j MASQUERADE
+sudo iptables -A FORWARD -p tcp -m tcp --tcp-flags SYN,RST SYN -j TCPMSS --set-mss 1400
+sudo systemctl stop ufw
+sudo systemctl disable ufw # prevents the firewall to wake up after a OS reboot
+```
+ 
 
 - **Clone the 5GCore branch**
 ```sh
