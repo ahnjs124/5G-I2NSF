@@ -1,6 +1,7 @@
 # 5G-I2NSF WebServer
 
-### Getting Started
+### Description
+This web server is installed to check whether the firewall formed based on 5G-I2NSF is blocking access by a specific user when the user attempts to access the server.
 
 ### Prerequisites
 Ubuntu 20.04 LTS
