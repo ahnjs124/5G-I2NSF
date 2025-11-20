@@ -51,21 +51,25 @@ git clone --branch WebServer https://github.com/ahnjs124/5G-I2NSF.git
 
 - **Retrieve the 5G GTP-U kernel module using git and build it**
 ```sh
+# new IP for GTP-U (now UPF uses the same IP with GTP-U)
+sudo ip addr add 192.168.18.162/24 dev ens33
+
 # 5G GTP-U installation
+cd
 git clone -b v0.9.14 https://github.com/free5gc/gtp5g.git
 cd gtp5g
 make
 sudo make install
 
 # make UPF
-cd ~/free5gc
+cd ~/5G-I2NSF/free5gc
 make upf
 ```
 
 - **Run each 5G Network Functions**
 ```sh
-cd ~/free5gc
-./bin/upf -c ./config/upf.yaml
+cd ~/5G-I2NSF/free5gc
+sudo ./bin/upf -c ./config/upf.yaml
 ```
 
 
