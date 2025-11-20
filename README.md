@@ -65,7 +65,7 @@ make upf
 
 - **Run each 5G Network Functions**
 ```sh
-cd ~/free5gc
+cd ~/5G-I2NSF/free5gc
 ./bin/upf -c ./config/upf.yaml
 ```
 
