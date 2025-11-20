@@ -54,12 +54,12 @@ make smf
 ```sh
 cd ~/free5gc
 ./bin/nrf ./config/nrf.yaml
-./bin/udr ./config/udr.yaml
-./bin/udm ./config/udm.yaml
-./bin/pcf ./config/pcf.yaml
-./bin/chf ./config/chf.yaml
-./bin/nssf ./config/nssf.yaml
-./bin/ausf ./config/ausf.yaml
-./bin/amf ./config/amf.yaml
-./bin/smf ./config/smfcfg_MultiUPF.yaml
+./bin/udr ./config/udr.yaml #(New Terminal)
+./bin/udm ./config/udm.yaml #(New Terminal)
+./bin/pcf ./config/pcf.yaml #(New Terminal)
+./bin/chf ./config/chf.yaml #(New Terminal)
+./bin/nssf ./config/nssf.yaml #(New Terminal)
+./bin/ausf ./config/ausf.yaml #(New Terminal)
+./bin/amf ./config/amf.yaml #(New Terminal)
+./bin/smf ./config/smfcfg_MultiUPF.yaml #(New Terminal)
 ```
