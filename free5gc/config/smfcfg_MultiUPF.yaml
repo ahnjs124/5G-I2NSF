@@ -1,4 +1,3 @@
-iotlab@5gcore:~/free5gc/config$ cat smfcfg_multiUPF.yaml 
 info:
   version: 1.0.7
   description: SMF initial local configuration
