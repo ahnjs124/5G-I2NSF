@@ -68,6 +68,8 @@ make upf
 
 - **Run each 5G Network Functions**
 ```sh
+# new IP for GTP/UDP task
+sudo ip addr add 192.168.18.150/24 dev ens33
 cd ~/5G-I2NSF/free5gc
 sudo ./bin/upf -c ./config/upf.yaml
 ```
