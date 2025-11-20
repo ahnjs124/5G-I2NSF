@@ -59,7 +59,7 @@ make
 sudo make install
 
 # make UPF
-cd ~/free5gc
+cd ~/5G-I2NSF/free5gc
 make upf
 ```
 
