@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SKKU IoT LAB Web Server</title>
+  <style>
+    /* 전체 페이지 스타일 */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
+      color: #fff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 카드 컨테이너 */
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      backdrop-filter: blur(10px);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    p {
+      color: #e0e0e0;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    /* 버튼 */
+    .btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #fff;
+      color: #4e54c8;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #8f94fb;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    /* 로고 이모지에 애니메이션 효과 */
+    .emoji {
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1><span class="emoji">🚀</span> SKKU IoT LAB Web Server</h1>
+    <p>Welcome to the IoT LAB web server at Sungkyunkwan University.</p>
+    <p>The server is up and running successfully!</p>
+    <a href="http://iotlab.skku.edu/index.php" class="btn" target="_blank">Learn More</a>
+  </div>
+</body>
+</html>
