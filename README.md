@@ -48,8 +48,16 @@ sudo systemctl disable ufw # prevents the firewall to wake up after a OS reboot
 git clone --branch WebServer https://github.com/ahnjs124/5G-I2NSF.git
 ```
 
-- **Make NFs**
+
+- **Retrieve the 5G GTP-U kernel module using git and build it**
 ```sh
+# 5G GTP-U installation
+git clone -b v0.9.14 https://github.com/free5gc/gtp5g.git
+cd gtp5g
+make
+sudo make install
+
+# make UPF
 cd ~/free5gc
 make upf
 ```
