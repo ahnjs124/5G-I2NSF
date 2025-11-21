@@ -91,9 +91,7 @@ cmake --version
 
 - gNB installation
 ```sh
-cd
-git clone https://github.com/aligungr/UERANSIM
-cd UERANSIM
+cd ~/5G-I2NSF/UERANSIM
 sudo apt update
 make
 ```
