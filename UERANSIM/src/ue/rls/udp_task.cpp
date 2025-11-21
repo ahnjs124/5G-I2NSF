@@ -91,6 +91,10 @@ void RlsUdpTask::receiveRlsPdu(const InetAddress &addr, std::unique_ptr<rls::Rls
 {
     if (msg->msgType == rls::EMessageType::HEARTBEAT_ACK)
     {
+
+        // 연결된 gNB로부터 HEARTBEAT_ACK 수신 시, 어떤 gNB로부터 온 신호인지 출력
+        printf("[UE] Received signal from gNB (sti=0x%llx)\n", (unsigned long long)msg->sti);
+
         if (!m_cells.count(msg->sti))
         {
             m_cells[msg->sti].cellId = ++m_cellIdCounter;
@@ -177,8 +181,13 @@ void RlsUdpTask::heartbeatCycle(uint64_t time, Vector3 &simPos)
         // ✅ simPos.x >= 50 이면 A3 event 발생
         // 여기서는 gNB에서 오는 dbm을 비교해서 판단해야 한다.
         msg.a3Event = (simPos.x >= 20) ? 1 : 0;
-        printf("a3Event: %d\n", msg.a3Event);
-        
+        if (msg.a3Event == 1){
+            printf("A3 Event: Yes\n");
+        }
+        else{
+            printf("A3 Event: No\n");
+        }
+        printf("\n");
 
         msg.simPos = simPos;
         sendRlsPdu(addr, msg);

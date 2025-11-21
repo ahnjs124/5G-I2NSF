@@ -16,6 +16,9 @@ namespace nr::ue
 
 void UeRrcTask::handleCellSignalChange(int cellId, int dbm)
 {
+    // gNB에서 오는 dmb 값 로그 출력
+    m_logger->info("Received signal: cell[%d], dbm = %d", cellId, dbm);
+   
     bool considerLost = dbm < -120;
 
     if (!m_cellDesc.count(cellId))
