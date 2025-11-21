@@ -9,8 +9,11 @@ UE: User Equipment
 Ubuntu 20.04 LTS (※ Change **Kernel Version** to **5.4.x** (for UPF))
 
 
+
+
+
 ## UE Installation
-- cmake installation
+- **cmake installation**
 ```sh
 # packages installation
 sudo apt update
@@ -23,7 +26,12 @@ sudo apt install cmake-mozilla
 cmake --version
 ```
 
-- UE installation
+- **Clone the 5GCore branch**
+```sh
+git clone --branch UE https://github.com/ahnjs124/5G-I2NSF.git
+```
+
+- **UE installation**
 ```sh
 cd
 git clone https://github.com/aligungr/UERANSIM
