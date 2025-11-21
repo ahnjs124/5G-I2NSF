@@ -68,8 +68,9 @@ make upf
 cd ~/5G-I2NSF/free5gc
 ```
 
-change the IP in side upfcfg.yaml
+- change the IP in side upfcfg.yaml
 
+- Run UPF
 ```sh
 sudo ./bin/upf -c ./config/upfcfg.yaml
 ```
