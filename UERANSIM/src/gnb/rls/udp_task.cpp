@@ -28,11 +28,52 @@ static constexpr const int MIN_ALLOWED_DBM = -120;
 
 static int EstimateSimulatedDbm(const Vector3 &myPos, const Vector3 &uePos)
 {
+
+    // UERANSIM에는 gNB에서 UE로 신호를 전송하는 시뮬레이션이 없으므로 해당 부분을 구현
+    // 현재 UE의 위치와 gNB의 위치를 기반으로 신호 강도 설정 및 전달 
+    static int signalCount = 0;
+    signalCount++;
+    printf("%d. Position: gNB1=(%d,%d,%d), UE=(%d,%d,%d)\n",
+        signalCount, myPos.x, myPos.y, myPos.z, uePos.x, uePos.y, uePos.z);
+
+    // x,y,z축별 거리계산
     int deltaX = myPos.x - uePos.x;
     int deltaY = myPos.y - uePos.y;
     int deltaZ = myPos.z - uePos.z;
 
+    // 실제 거리 계산 (유클리드 거리)
     int distance = static_cast<int>(std::sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ));
+
+
+    // 거리기반 UE에서 받는 gNB 신호값 설정
+    int baseDbm = -40; // 기본 송신전력 (가까울 때)
+    int dbmNow = baseDbm - (distance / 2); // 거리당 감쇠 (2m당 약 1dB 손실)
+
+
+    // 신호 랜덤 노이즈 생성 및 추가 (±3dB)
+    static bool seeded = false; // seed 설정
+    if (!seeded){
+        srand(static_cast<unsigned int>(time(nullptr))); 
+        seeded = true;
+    }
+
+    int noise = (rand() % 7) - 3;
+    dbmNow += noise;
+
+
+    // dbm 신호 전달 상한/하한 제한
+    // UE가 신호를 받을 때, -30dBm 이상으로는 너무 강한 신호로 포화상태로 간주됨
+    // UE가 신호를 받을 때, -120dBm 이하로는 신호가 너무 약해 수신 불가로 간주됨
+    if (dbmNow > -30)
+        dbmNow = -30; //상한제한
+    if (dbmNow < -120)
+        dbmNow = -120; //하한제한
+
+
+    // 현재 거리 차이 및 dmb 로그 출력
+    printf("gNB2 & UE: distance=%d m | dbm=%d\n", distance, dbmNow);
+
+
     if (distance == 0)
         return -1; // 0 may be confusing for people
     return -distance;

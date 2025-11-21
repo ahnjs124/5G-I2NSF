@@ -5,14 +5,19 @@ nci: '0x000000010'  # NR Cell Identity (36-bit)
 idLength: 32        # NR gNB ID length in bits [22...32]
 tac: 1              # Tracking Area Code
 
-linkIp: 127.0.0.1   # gNB's local IP address for Radio Link Simulation (Usually same with local IP)
-ngapIp: 127.0.0.1   # gNB's local IP address for N2 Interface (Usually same with local IP)
-gtpIp: 127.0.0.1    # gNB's local IP address for N3 Interface (Usually same with local IP)
+linkIp: 192.168.18.161 #127.0.0.1   # gNB's local IP address for Radio Link Simulation (Usually same with local IP)
+ngapIp: 192.168.18.161 #127.0.0.1   # gNB's local IP address for N2 Interface (Usually same with local IP)
+gtpIp: 192.168.18.163 #127.0.0.1    # gNB's local IP address for N3 Interface (Usually same with local IP)
 
 # List of AMF address information
 amfConfigs:
-  - address: 127.0.0.1
+  - address: 192.168.18.159 #127.0.0.1
     port: 38412
+
+# ★ 추가1: gNB가 GTP-U를 보낼 UPF의 N3 주소/포트
+upfConfigs:
+  - address: 192.168.18.161
+    port: 2152
 
 # List of supported S-NSSAIs by this gNB
 slices:
