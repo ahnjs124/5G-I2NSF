@@ -66,7 +66,12 @@ make upf
 - **Run each 5G Network Functions**
 ```sh
 cd ~/5G-I2NSF/free5gc
-sudo ./bin/upf -c ./config/upf.yaml
+```
+
+change the IP in side upfcfg.yaml
+
+```sh
+sudo ./bin/upf -c ./config/upfcfg.yaml
 ```
 
 
