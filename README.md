@@ -51,9 +51,6 @@ git clone --branch gNB2 https://github.com/ahnjs124/5G-I2NSF.git
 
 - **Retrieve the 5G GTP-U kernel module using git and build it**
 ```sh
-# new IP for GTP-U (now UPF uses the same IP with GTP-U)
-sudo ip addr add 192.168.18.163/24 dev ens33
-
 # 5G GTP-U installation
 cd
 git clone -b v0.9.14 https://github.com/free5gc/gtp5g.git
@@ -68,8 +65,6 @@ make upf
 
 - **Run each 5G Network Functions**
 ```sh
-# new IP for GTP/UDP task
-sudo ip addr add 192.168.18.150/24 dev ens33
 cd ~/5G-I2NSF/free5gc
 sudo ./bin/upf -c ./config/upf.yaml
 ```
@@ -88,6 +83,10 @@ sudo apt install cmake-mozilla
 # cmake version check
 cmake --version
 ```
+
+# new IP for gNB gtpIP
+sudo ip addr add 192.168.18.163/24 dev ens33
+
 
 - gNB installation
 ```sh
