@@ -33,9 +33,7 @@ git clone --branch UE https://github.com/ahnjs124/5G-I2NSF.git
 
 - **UE installation**
 ```sh
-cd
-git clone https://github.com/aligungr/UERANSIM
-cd UERANSIM
+cd ~/5G-I2NSF/UERANSIM
 sudo apt update
 make
 ```
