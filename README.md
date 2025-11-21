@@ -1,4 +1,4 @@
-# 5G-I2NSF gNB1
+# 5G-I2NSF gNB2
 
 ### Description
 The UE is initially connected to this gNB, and the NSF formed based on intent is blocking access for that user.
@@ -45,14 +45,14 @@ sudo systemctl disable ufw # prevents the firewall to wake up after a OS reboot
 
 - **Clone the 5GCore branch**
 ```sh
-git clone --branch gNB1 https://github.com/ahnjs124/5G-I2NSF.git
+git clone --branch gNB2 https://github.com/ahnjs124/5G-I2NSF.git
 ```
 
 
 - **Retrieve the 5G GTP-U kernel module using git and build it**
 ```sh
 # new IP for GTP-U (now UPF uses the same IP with GTP-U)
-sudo ip addr add 192.168.18.162/24 dev ens33
+sudo ip addr add 192.168.18.163/24 dev ens33
 
 # 5G GTP-U installation
 cd
