@@ -187,7 +187,6 @@ void RlsUdpTask::heartbeatCycle(uint64_t time, Vector3 &simPos)
         else{
             printf("A3 Event: No\n");
         }
-        printf("\n");
 
         msg.simPos = simPos;
         sendRlsPdu(addr, msg);
