@@ -28,6 +28,8 @@ void EncodeRlsMessage(const RlsMessage &msg, OctetString &stream)
         stream.appendOctet4(m.simPos.x);
         stream.appendOctet4(m.simPos.y);
         stream.appendOctet4(m.simPos.z);
+        stream.appendOctet4(m.a3Event);   //  UE->gNB 전달 메시지 Encode시, UE에서 a3Event가 필요한 순간을 gNB에 전달하기 위해 추가
+
     }
     else if (msg.msgType == EMessageType::HEARTBEAT_ACK)
     {
@@ -74,6 +76,8 @@ std::unique_ptr<RlsMessage> DecodeRlsMessage(const OctetView &stream)
         res->simPos.x = stream.read4I();
         res->simPos.y = stream.read4I();
         res->simPos.z = stream.read4I();
+        res->a3Event = stream.read4I();  // UE->gNB 전달 메시지 Decode시, UE에서 a3Event가 필요한 순간을 gNB에 전달하기 위해 추가
+
         return res;
     }
     else if (msgType == EMessageType::HEARTBEAT_ACK)

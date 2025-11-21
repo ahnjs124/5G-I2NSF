@@ -139,8 +139,18 @@ void RlsUdpTask::onSignalChangeOrLost(int cellId)
     m_ctlTask->push(std::move(w));
 }
 
-void RlsUdpTask::heartbeatCycle(uint64_t time, const Vector3 &simPos)
+void RlsUdpTask::heartbeatCycle(uint64_t time, Vector3 &simPos)
 {
+    // 방향 제어용 변수: static으로 선언하면 함수 호출이 반복되어도 값 유지
+    static int dx = 1, dy = 1, dz = 1;
+
+    // 현재 UE의 위치를 지속적으로 변경한다(UE Distance Increase)
+    simPos.x += dx;
+    simPos.y += dy;
+    simPos.z += dz;
+    printf("[UE] Updated UE position=(%d,%d,%d)\n", simPos.x, simPos.y, simPos.z);
+
+
     std::set<std::pair<uint64_t, int>> toRemove;
 
     for (auto &cell : m_cells)
@@ -162,6 +172,14 @@ void RlsUdpTask::heartbeatCycle(uint64_t time, const Vector3 &simPos)
     for (auto &addr : m_searchSpace)
     {
         rls::RlsHeartBeat msg{m_shCtx->sti};
+
+
+        // ✅ simPos.x >= 50 이면 A3 event 발생
+        // 여기서는 gNB에서 오는 dbm을 비교해서 판단해야 한다.
+        msg.a3Event = (simPos.x >= 20) ? 1 : 0;
+        printf("a3Event: %d\n", msg.a3Event);
+        
+
         msg.simPos = simPos;
         sendRlsPdu(addr, msg);
     }

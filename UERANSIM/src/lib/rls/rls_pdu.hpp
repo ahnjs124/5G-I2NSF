@@ -52,6 +52,7 @@ struct RlsMessage
 struct RlsHeartBeat : RlsMessage
 {
     Vector3 simPos;
+    int a3Event;  // 메시지 전달(UE->gNB)시, UE에서 a3Event가 필요한 순간을 gNB에 전달하기 위해 추가
 
     explicit RlsHeartBeat(uint64_t sti) : RlsMessage(EMessageType::HEARTBEAT, sti)
     {
