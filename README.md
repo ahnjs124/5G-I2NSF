@@ -68,7 +68,7 @@ make upf
 cd ~/5G-I2NSF/free5gc
 ```
 
-- change the IP in side upfcfg.yaml
+- change `PFCP addr IP`, `PFCP nodeID IP`, `gtpu addr IP` in upfcfg.yaml
 
 - Run UPF
 ```sh
