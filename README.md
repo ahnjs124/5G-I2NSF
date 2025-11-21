@@ -49,6 +49,9 @@ git clone --branch gNB2 https://github.com/ahnjs124/5G-I2NSF.git
 ```
 
 
+# new IP for GTP-U (now UPF uses the same IP with GTP-U)
+sudo ip addr add 192.168.18.163/24 dev ens33
+
 - **Retrieve the 5G GTP-U kernel module using git and build it**
 ```sh
 # 5G GTP-U installation
