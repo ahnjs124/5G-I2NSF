@@ -174,9 +174,9 @@ enum class ECellCategory
 
 struct Vector3
 {
-    int x{};
-    int y{};
-    int z{};
+    int x = 50;
+    int y = 50;
+    int z = 50;
 
     Vector3() = default;
 
