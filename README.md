@@ -45,7 +45,7 @@ sudo systemctl disable ufw # prevents the firewall to wake up after a OS reboot
 
 - **Clone the 5GCore branch**
 ```sh
-git clone --branch WebServer https://github.com/ahnjs124/5G-I2NSF.git
+git clone --branch gNB1 https://github.com/ahnjs124/5G-I2NSF.git
 ```
 
 
