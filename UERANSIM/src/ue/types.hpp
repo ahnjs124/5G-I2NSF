@@ -185,7 +185,7 @@ struct UeSharedContext
     Locked<std::vector<Tai>> forbiddenTaiRoaming;
     Locked<std::vector<Tai>> forbiddenTaiRps;
     Locked<std::optional<GutiMobileIdentity>> providedGuti;
-    Locked<std::optional<GutiMobileIdentity>> providedTmsi;
+    Locked<std::optional<GutiMobileIdentity>> providedTmsi; 
 
     Plmn getCurrentPlmn();
     Tai getCurrentTai();

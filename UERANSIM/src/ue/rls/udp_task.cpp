@@ -87,6 +87,7 @@ void RlsUdpTask::send(int cellId, const rls::RlsMessage &msg)
     }
 }
 
+
 void RlsUdpTask::receiveRlsPdu(const InetAddress &addr, std::unique_ptr<rls::RlsMessage> &&msg)
 {
     if (msg->msgType == rls::EMessageType::HEARTBEAT_ACK)
@@ -143,6 +144,7 @@ void RlsUdpTask::onSignalChangeOrLost(int cellId)
     m_ctlTask->push(std::move(w));
 }
 
+
 void RlsUdpTask::heartbeatCycle(uint64_t time, Vector3 &simPos)
 {
     // 방향 제어용 변수: static으로 선언하면 함수 호출이 반복되어도 값 유지
@@ -173,6 +175,11 @@ void RlsUdpTask::heartbeatCycle(uint64_t time, Vector3 &simPos)
     for (auto cell : toRemove)
         onSignalChangeOrLost(cell.second);
 
+    
+
+    // -----------------------------
+    // 4. 메시지를 gNB들에 전송
+    // -----------------------------
     for (auto &addr : m_searchSpace)
     {
         rls::RlsHeartBeat msg{m_shCtx->sti};

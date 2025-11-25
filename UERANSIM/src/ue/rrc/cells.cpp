@@ -21,16 +21,19 @@ void UeRrcTask::handleCellSignalChange(int cellId, int dbm)
    
     bool considerLost = dbm < -120;
 
+    // 이 셀은 처음보는 셀인가?
     if (!m_cellDesc.count(cellId))
     {
         if (!considerLost)
             notifyCellDetected(cellId, dbm);
     }
-    else
+    else // 이미 알고 있는 셀이라면
     {
+        // 신호 가 너무 약해서 사라졌다고 판단될 때
         if (considerLost)
             notifyCellLost(cellId);
         else
+            // 신호가 정상적으로 들어온경우
             m_cellDesc[cellId].dbm = dbm;
     }
 }
