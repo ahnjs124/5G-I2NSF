@@ -12,8 +12,18 @@ Ubuntu 20.04 LTS (※ Change **Kernel Version** to **5.4.x** (for UPF))
 
 ### Kernal version change
 if the kernal version is uppper than 5.4.x, change to kernal version to 5.4.x
-
-
+```sh
+uname -r
+sudo apt update
+sudo apt install linux-image-5.4.0-150-generic linux-headers-5.4.0-150-generic
+grep menuentry /boot/grub/grub.cfg
+```
+```sh
+sudo nano /etc/default/grub # change (GRUB_DEFAULT="1>4")
+sudo update-grub
+sudo reboot
+uname -r
+```
 
 ## UPF Installation
 https://free5gc.org/guide/3-install-free5gc/#a-prerequisites
