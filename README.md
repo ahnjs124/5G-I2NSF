@@ -9,6 +9,12 @@ VMs using this branch must have UPF and gNB installed together, and to use UPF o
 ### Prerequisites
 Ubuntu 20.04 LTS (※ Change **Kernel Version** to **5.4.x** (for UPF))
 
+
+### Kernal version change
+if the kernal version is uppper than 5.4.x, change to kernal version to 5.4.x
+
+
+
 ## UPF Installation
 https://free5gc.org/guide/3-install-free5gc/#a-prerequisites
 
