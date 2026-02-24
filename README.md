@@ -10,8 +10,8 @@ VMs using this branch must have UPF and gNB installed together, and to use UPF o
 Ubuntu 20.04 LTS (※ Change **Kernel Version** to **5.4.x** (for UPF))
 
 
-### Kernal version change
-if the kernal version is uppper than 5.4.x, change to kernal version to 5.4.x
+### Kernel version change
+If the kernel version is uppper than 5.4.x, change to kernal version to 5.4.x
 ```sh
 uname -r
 sudo apt update
