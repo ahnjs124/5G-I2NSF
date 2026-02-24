@@ -104,6 +104,8 @@ sudo apt update
 make
 ```
 
-## gNB start
+- gNB start
+```sh
 cd ~/UERANSIM
-sudo build/nr-ue -c config/free5gc-ue.yaml 
+sudo build/nr-ue -c config/free5gc-ue.yaml
+```
