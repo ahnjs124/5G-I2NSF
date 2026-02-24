@@ -107,5 +107,5 @@ make
 - gNB start
 ```sh
 cd ~/UERANSIM
-sudo build/nr-ue -c config/free5gc-ue.yaml
+build/nr-gnb -c config/free5gc-gnb.yaml
 ```
