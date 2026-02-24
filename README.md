@@ -53,13 +53,13 @@ make smf
 - **Run each 5G Network Functions**
 ```sh
 cd ~/free5gc
-./bin/nrf -c ./config/nrf.yaml
-./bin/udr -c ./config/udr.yaml #(New Terminal)
-./bin/udm -c ./config/udm.yaml #(New Terminal)
-./bin/pcf -c ./config/pcf.yaml #(New Terminal)
-./bin/chf -c ./config/chf.yaml #(New Terminal)
-./bin/nssf -c ./config/nssf.yaml #(New Terminal)
-./bin/ausf -c ./config/ausf.yaml #(New Terminal)
-./bin/amf -c ./config/amf.yaml #(New Terminal)
+./bin/nrf -c ./config/nrfcfg.yaml
+./bin/udr -c ./config/udrcfg.yaml #(New Terminal)
+./bin/udm -c ./config/udmcfg.yaml #(New Terminal)
+./bin/pcf -c ./config/pcfcfg.yaml #(New Terminal)
+./bin/chf -c ./config/chfcfg.yaml #(New Terminal)
+./bin/nssf -c ./config/nssfcfg.yaml #(New Terminal)
+./bin/ausf -c ./config/ausfcfg.yaml #(New Terminal)
+./bin/amf -c ./config/amfcfg.yaml #(New Terminal)
 ./bin/smf -c ./config/smfcfg_MultiUPF.yaml #(New Terminal)
 ```
