@@ -103,3 +103,7 @@ cd ~/5G-I2NSF/UERANSIM
 sudo apt update
 make
 ```
+
+## gNB start
+cd ~/UERANSIM
+sudo build/nr-ue -c config/free5gc-ue.yaml 
