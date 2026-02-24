@@ -22,7 +22,7 @@ grep menuentry /boot/grub/grub.cfg
 sudo nano /etc/default/grub # change (GRUB_DEFAULT="1>4")
 sudo update-grub
 sudo reboot
-uname -r
+uname -r # 5.4.xxx
 ```
 
 ## UPF Installation
