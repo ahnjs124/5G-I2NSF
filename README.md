@@ -19,7 +19,7 @@ sudo apt install linux-image-5.4.0-150-generic linux-headers-5.4.0-150-generic
 grep menuentry /boot/grub/grub.cfg
 ```
 ```sh
-sudo nano /etc/default/grub # change (GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 5.4.0-150-generic")
+sudo sed -i 's/^GRUB_DEFAULT=.*/GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 5.4.0-150-generic"/' /etc/default/grub
 sudo update-grub
 sudo reboot
 uname -r # 5.4.xxx
